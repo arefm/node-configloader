@@ -1,5 +1,5 @@
 'use strict';
 
-var configloader = require(__dirname).get('app.env');
+var configloader = require(__dirname);
 
-console.log(configloader);
+console.log(configloader.get());
