@@ -1,6 +1,6 @@
 {
-    "name": "configloader",
-    "version": "1.0.0",
+    "name": "node-configloader",
+    "version": "0.9.1",
     "description": "nodemo configloader",
     "main": "index.js",
     "repository": {
