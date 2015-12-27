@@ -12,8 +12,7 @@ var CFGLoader = function () {
 		
 		uiduser: process.env.USER,
 		
-		env: process.env.NODE_ENV || process.argv[process.argv.indexOf('--env') + 1] || 'production',
-
+		env: process.env.NODE_ENV || 'production',
 		__init: function() {
 			//set env
 			cls.env = ['production', 'development'].indexOf(cls.env) > -1 ? cls.env : "production";
@@ -21,6 +20,8 @@ var CFGLoader = function () {
 			cls.configs = JSON.parse(fs.readFileSync(__dirname + "/common.cfg.json"));
 			//set uid user
 			cls.configs['app']['user'] = cls.uiduser;
+			//set env
+			cls.configs['app']['env'] = cls.env;
 			//load env config file
 			var configFile = JSON.parse(fs.readFileSync(__dirname + "/" + cls.env + ".cfg.json"));
 			cls.configs = _.merge(cls.configs, configFile);
