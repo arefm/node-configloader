@@ -1,5 +1,5 @@
 'use strict';
 
-var configloader = require('configloader');
+var configloader = require('node-configloader');
 
 console.log('CONFIGS:', configloader);
