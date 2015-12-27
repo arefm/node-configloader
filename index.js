@@ -12,7 +12,7 @@ var CFGLoader = function () {
 
 		configs: {},
 		
-		uiduser: process.env.USER,
+		uiduser: process.env.USER || "root",
 		
 		env: process.env.NODE_ENV || 'production',
 

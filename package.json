@@ -1,6 +1,6 @@
 {
     "name": "node-configloader",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "description": "node configloader by Aref Mirhosseini",
     "main": "index.js",
     "repository": {
