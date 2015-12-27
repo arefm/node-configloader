@@ -1,0 +1,23 @@
+{
+    "name": "configloader",
+    "version": "1.0.0",
+    "description": "nodemo configloader",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/arefm/node-configloader.git"
+    },
+    "scripts": {
+        "test": "node test"
+    },
+    "keywords": [
+        "node",
+        "config",
+        "loader"
+    ],
+    "author": "aref mirhosseini <code@arefmirhosseini.com> (http://arefmirhosseini.com)",
+    "license": "ISC",
+    "dependencies": {
+        "lodash": "^3.10.1"
+    }
+}
