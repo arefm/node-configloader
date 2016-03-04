@@ -22,9 +22,9 @@ var CFGLoader = function () {
 			//load common config file
 			cls.configs = JSON.parse(fs.readFileSync(cls.path + "/common.cfg.json"));
 			//set uid user
-			cls.configs['app']['user'] = cls.uiduser;
+			cls.configs['__user'] = cls.uiduser;
 			//set env
-			cls.configs['app']['env'] = cls.env;
+			cls.configs['__env'] = cls.env;
 			//load env config file
 			var configFile = {};
 			if (fs.existsSync(cls.path + "/" + cls.env + ".cfg.json")) {
@@ -34,7 +34,23 @@ var CFGLoader = function () {
 		},
 
 		setPath: function(path) {
-			if (fs.existsSync(path) + "/common.cfg.json") {
+			if (!fs.existsSync(path + "/common.cfg.json")) {
+				[
+					'common.cfg.json',
+					'development.cfg.json',
+					'production.cfg.json',
+				].forEach(function(cfgFile, idx) {
+					var readStream = fs.createReadStream(__dirname + '/' + cfgFile)
+					var writeStream = fs.createWriteStream(path + '/' + cfgFile)
+					readStream.pipe(writeStream)
+					writeStream.on('close', function() {
+						if (idx === 2) {
+							cls.path = path;
+							cls.__init();
+						}
+					})
+				})
+			} else {
 				cls.path = path;
 				cls.__init();
 			}

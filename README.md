@@ -1,7 +1,7 @@
 **Node Configloader**
 ==================
 
-Simple Node.js Configloader by Aref Mirhosseini
+Simple Node.js Configloader
 
 *github.com/arefm/node-configloader*
 
@@ -39,7 +39,7 @@ var serverConfigs = configs.get("app.server");
 Change Configuration Files Path
 --------------------------------------
 ```
-configs.setPath('/home/user/projects/files');
+configs.setPath('/home/user/projects/configs_directory');
 ```
 
 Change Application Environment
@@ -63,8 +63,3 @@ configs.set({
 	}
 });
 ```
-
-*contact me:*
-		*github: github.com/arefm/node-configloader*
-	*email: code@arefmirhosseini.com*
-	*url: arefmirhosseini.com*
